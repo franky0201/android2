@@ -14,7 +14,7 @@ import androidx.core.view.WindowInsetsCompat
 import org.w3c.dom.Text
 
 class MainActivity : AppCompatActivity() {
-    @SuppressLint("SetTextI18n")
+    @SuppressLint("SetTextI18n", "MissingInflatedId")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
@@ -26,7 +26,7 @@ class MainActivity : AppCompatActivity() {
         val getButton = findViewById<Button>(R.id.getButton)
         val resultView = findViewById<TextView>(R.id.resultView)
 
-        val sharedPref = getSharedPreferences("my_prefs", Context.MODE_PRIVATE)
+        val sharedPref = getSharedPreferences("my_prefs", MODE_PRIVATE)
 
         saveButton.setOnClickListener{
             sharedPref.edit().run {
